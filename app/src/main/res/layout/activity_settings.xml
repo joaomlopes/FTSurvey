@@ -15,7 +15,7 @@
         <LinearLayout
             android:id="@+id/textLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
 
@@ -26,7 +26,7 @@
         android:layout_below="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ></ListView>
+        android:layout_above="@+id/addBtn"></ListView>
     <Button
         android:id="@+id/addBtn"
         android:layout_width="match_parent"
