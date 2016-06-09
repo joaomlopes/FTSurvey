@@ -111,18 +111,6 @@ public class MainActivity extends BaseActivity {
                             }
                         });
                     }
-
-                    /**
-                     * Exercise 1
-                     * This method calls on the database if they have the user's name.
-                     * It was called before the verification and storing the user's name in the database.
-                     * I've changed the order so that would run smoothly and without problems.
-                     */
-                    try {
-                        userName = getDatabase().get("usersName");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
                 }
             });
         }

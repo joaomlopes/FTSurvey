@@ -140,23 +140,6 @@ public class Database extends SQLiteOpenHelper {
     }
 
     /**
-     * Optional Exercise 1
-     * Implement a functionality with which the user can insert a skill himself.
-     * Insert on Database method
-     *
-     * @param key
-     */
-    public void insertSkill(String key) {
-        if (getSkill(key) == null) {
-            SQLiteDatabase db = this.getWritableDatabase();
-            ContentValues values = new ContentValues();
-            values.put(fieldID, key);
-            db.insert(tableSkills, null, values);
-            db.close();
-        }
-    }
-
-    /**
      * Optional Exercise 2
      * Implement a functionality with wich the user can update a skill
      * Update on Database method

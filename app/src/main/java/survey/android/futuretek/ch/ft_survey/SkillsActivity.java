@@ -177,7 +177,6 @@ public class SkillsActivity extends BaseActivity {
 
                 } else {
                     insertSkill(skillName);
-//                    listSkills();
                 }
             }
         });
@@ -189,37 +188,24 @@ public class SkillsActivity extends BaseActivity {
      * Method to call the input to edit the skill
      */
     private void editSkill() {
-        final Dialog dlg = new Dialog(this);
-        dlg.setContentView(R.layout.dialog);
 
-        try{
-            final EditText editInput = ((EditText) dlg.findViewById(R.id.userInput));
+//        final EditText editInput = ((EditText) .findViewById(R.id.userInput));
 
-            editInput.setText(skillName, TextView.BufferType.EDITABLE);
+//        editInput.setText(skillName, TextView.BufferType.EDITABLE);
 
-            ((Button) dlg.findViewById(R.id.okBtn)).setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
+        openInputDialog(new View.OnClickListener() {
+            public void onClick(View v) {
 
-                    //Call method to update value on Database
-                    getDatabase().updateSkill(skillName, editInput.getText().toString());
+                EditText editInput = ((EditText) v.findViewById(R.id.userInput));
 
-                    //Call method to list all the skills
-                    listSkills();
+                //Call method to update value on Database
+                getDatabase().updateSkill(skillName, editInput.getText().toString());
 
-                    //Dismiss dialog
-                    dlg.dismiss();
-                    dlg.getWindow().getDecorView();
-                }
-            });
-            dlg.setOnCancelListener(
-                    new DialogInterface.OnCancelListener() {
-                        public void onCancel(DialogInterface dialog) {
-                            dlg.dismiss();
-                        }
-                    });
-            dlg.show();
-        }catch (Exception e){
-        }
+                //Call method to list all the skills
+                listSkills();
+
+            }
+        });
 
     }
 
